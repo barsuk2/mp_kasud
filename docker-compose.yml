@@ -1,7 +1,17 @@
+version: '3.1'
+
 services:
-  mp_kasud:
-    build: .
-    ports:
-      - 5000:5000
+  db_:
+    container_name: db_ps
+    restart: always
+    image: postgres:14
     volumes:
-      - ./src:/src
+      - /srv/mp_kasud/db_pg:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=pgpwd4habr
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+#volumes:
+#  pg_data:g

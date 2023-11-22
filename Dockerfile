@@ -1,6 +1,6 @@
 FROM python:3.10
 LABEL authors="egor"
-RUN pip install --upgrade pip && pip install fastapi[all]
+RUN pip install --upgrade pip && pip install fastapi[all] && pip install redis
 
 # docker run --rm -p 5000:5000 -v "$(pwd)"/src:/src mp_kasud_im
 WORKDIR /src
